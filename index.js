@@ -290,18 +290,17 @@ function counterMaker() {
  * etc
  */
 function counterMakerWithLimit(num) {
-  let count = 0;
+  let count = -1;
 
-  function counter(){
-    if(count <= num){
-      return count++;
+  return function counter(){
+    if(count === num) {
+      count = -1;
   };
-
-  else {
-    return count = 0;
-  };
+  
+  return ++count;
+  
 };
-  return counter;
+
 };
 
 
